@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Insert Demo Extention</title>
+
+      <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Extensions API Library (this will be hosted on a CDN eventually) -->
+  <script src="./js/tableau.extensions.1.latest.min.js"></script>
+
+  <!-- Our extensions's code -->
+  <script src="./js/NewActivity.js"></script>
+  <script src="./css/newActivity.css"></script>
+
+     <!-- <script src="../resource.js"></script> -->
+     </head>
+     <body>         
+        <div class="container">
+          <h3>Please Enter the New Activity In the Table Below</h3>
+          <div class="panel panel-default">
+              <div class="panel-heading"><b>New Activity</b>
+              </div>
+              <form name="NewActivityForm">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th class="col-xs-3">Selection1</th>
+                          <th class="col-xs-3">Selection2</th>
+                          <th class="col-xs-3">Selection3</th>
+                          <th class="col-xs-3">Selection4</th>
+                          <th class="col-xs-3">Start Year</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>
+                            <!-- <p class="form-control-static">3D</p> -->
+                            <input list="customers" name="customer" id="customer">
+                            <datalist id="customers">
+                              <option value="Networks">
+                              <option value="Generation">
+                            </datalist>
+  
+                          </td>
+                          <td>
+                              <!-- <p class="form-control-static">3D</p> -->
+                              <input list="activitys" name="activity" id="activity">
+                              <datalist id="activitys">
+                                <option value="Act1">
+                                <option value="Act2">
+                                <option value="Act3">
+                                <option value="Act4">
+                                <option value="Act5">
+                              </datalist>
+                          </td>
+                          <td>
+                              <!-- <p class="form-control-static">16000</p> -->
+                              <input list="categories" name="category" id="category">
+                              <datalist id="categories">
+                                <option value="Cat1">
+                                <option value="Cat2">
+                                <option value="Cat3">
+                              </datalist>
+                          </td>
+                          <td>
+                            <input list="subcategories" name="subcategory" id="subcategory">
+                              <datalist id="subcategories">
+                                <option value="Sub Cat1">
+                                <option value="Sub Cat2">
+                                <option value="Sub Cat3">
+                              </datalist>
+                          </td>
+                          <td>
+                            <!-- <p class="form-control-static">16000</p> -->
+                            <input type="number" id="start_year" name="start_year" size = 5 >
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="col-xs-12 text-left">
+              <!-- <p>PS: There are only <strong>40</strong> ticket still available.</p> -->
+              <input type="button" class="btn btn-success" value="Enter Forecast"id="btnActivity"  onclick = "EnterForecast();" />
+          </div>
+
+          <br>
+          
+          <br>
+          <br>
+          
+            <!-- <h3>Please Enter the Forecast for the activity In the Table Below</h3> -->
+            <div class="panel panel-default" id = "ForecastForm" style = "display:none" >
+              <div class="panel-heading"><b>New Forecast</b>
+              </div>
+              <form name="NewActivityForecast"  style = "display:none">
+              <table class="table table-striped" id = "forecasttbl">
+                  <thead>
+                      <tr>
+                          <th class="col-xs-3">Activity</th>
+                          <th class="col-xs-3">Cost Centre</th>
+                          <th class="col-xs-3"><input type="text" id="year0" name="year0" size = 5 readonly ></th>
+                          <th class="col-xs-3"><input type="text" id="year1" name="year1" size = 5 readonly ></th>
+                          <th class="col-xs-3"><input type="text" id="year2" name="year2" size = 5 readonly ></th>
+                          <th class="col-xs-3"><input type="text" id="year3" name="year3" size = 5 readonly ></th>
+                          <th class="col-xs-3"><input type="text" id="year4" name="year4" size = 5 readonly ></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>
+                            <textarea readonly name="text" id="ActivityName"  rows="3" cols="35" wrap="soft"> </textarea>
+                          </td>
+                          <td>
+                              <!-- <p class="form-control-static">3D</p> -->
+                              <input list="costcentres" name="costcentre" id="costcentre">
+                              <datalist id="costcentres">
+                                <option value="COE AMS">
+                                <option value="COE Net Eng">
+                                <option value="COE Gen Eng">
+                                <option value="COE C&E">
+                              </datalist>
+                              
+                          </td>
+                          <td>
+                              <!-- <p class="form-control-static">16000</p> -->
+                              <input type="number" id="start_year" name="start_year" max = 2099 style="width: 7em"  >
+                          </td>
+                          <td>
+                            <input type="number" id="start_year" name="start_year" max = 2099  style="width: 7em" >
+                          </td>
+                          <td>
+                            <!-- <p class="form-control-static">16000</p> -->
+                            <input type="number" id="start_year" name="start_year" max = 2099 style="width: 7em" >
+                          </td>
+                          <td>
+                            <!-- <p class="form-control-static">16000</p> -->
+                            <input type="number" id="start_year" name="start_year" max = 2099 style="width: 7em" >
+                          </td>
+                          <td>
+                            <!-- <p class="form-control-static">16000</p> -->
+                            <input type="number" id="start_year" name="start_year" max = 2099 style="width: 7em" >
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              <p></p>
+          
+          <div class="col-xs-12 text-left">
+            <!-- <p>PS: There are only <strong>40</strong> ticket still available.</p> -->
+            <input type="button" class="btn btn-success" value="Add New Cost centre" onclick="insertRow('forecasttbl')"/>
+        </div>
+          <div class="col-xs-12 text-right">
+              <!-- <p>PS: There are only <strong>40</strong> ticket still available.</p> -->
+              <input type="button" class="btn btn-success" value="Submit" onclick="pushtoDB('forecasttbl')" />
+          </div>
+        </div>
+            
+          </form>
+
+
+      </div>
+       </form>
+
+       
+        
+      
+</body>
+</html>

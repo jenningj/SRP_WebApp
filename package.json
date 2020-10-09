@@ -1,0 +1,24 @@
+{
+  "name": "srp_webapp",
+  "version": "1.0.0",
+  "description": "SRP New Activity",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "semistandard",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenningj/SRP_WebApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenningj/SRP_WebApp/issues"
+  },
+  "homepage": "https://github.com/jenningj/SRP_WebApp#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
